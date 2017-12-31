@@ -1,0 +1,16 @@
+<!--채팅 바디 Wrapper -->
+<template name="chattingbody">
+    <section class="base_width base_body">
+        <div class="app_width container_body">
+            <div class="chat_list" id="chat_list">
+                <!-- CHAT LIST -->
+                {{#each messages}}
+                    {{> chattingMessageBox}}
+                {{/each}}
+            </div>
+	        <!--{{#if isMemeber}}-->
+            {{> chatInput }}
+	        <!--{{/if}}-->
+        </div>
+    </section>
+</template>

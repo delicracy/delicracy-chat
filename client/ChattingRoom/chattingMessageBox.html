@@ -1,0 +1,34 @@
+<!-- 메시지 상자 -->
+<template name="chattingMessageBox">
+    {{#if isCurrentUser joinName}}
+        <!--나의 메시지 상자-->
+        <article class="from_right">
+            <div class="chat_article chat_right">
+                <pre>{{message}}</pre>
+                <div class="chat_info_right">
+                    {{chatDateTime chattime}}
+                </div>
+            </div>
+        </article>
+    {{else}}
+        <!--상대 메시지 상자-->
+    <article class="from_left">
+        <div class="chat_member">
+            {{joinName}}
+        </div>
+        <div class="chat_article chat_left">
+	            <pre>{{message}}</pre>
+            <div class="chat_info_left">
+                {{chatDateTime chattime}}
+            </div>
+            <div class="chat_member_left">
+                    {{#if profile}}
+	                    <img src="{{joinThumb}}"/>
+                    {{else}}
+	                    <img src="/default_Profile.png"/>
+                    {{/if}}
+            </div>
+        </div>
+    </article>
+    {{/if}}
+</template>
